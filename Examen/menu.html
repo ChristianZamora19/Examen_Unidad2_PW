@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .Fondo{
+            background-image:url("https://img.elo7.com.br/product/original/28114D1/papel-de-parede-pedras-116-papel-de-parede.jpg" );
+        }
+        .btn-borde1 {
+            padding: .375rem .75rem;
+            border: 1px solid #099e15;
+            border-radius: .25rem;
+            color: #099e15;
+            transition: color .15s ease-in-out,
+            background-color .15s ease-in-out;
+        }
+        .btn-borde1:hover, .btn-borde:active, .btn-borde:focus {
+            color: #fff;
+            background-color: #099e15;
+        }
+
+        .btn-borde1:hover, .btn-borde:active, .btn-borde:focus {
+            color: #fff;
+            background-color: #099e15;
+        }
+        .Titulo{
+            color: rgb(4, 18, 143);
+            font-family:cursive ;
+            outline-style: double;
+            outline-color: rgb(175, 4, 4);
+            outline-width: 5px;
+        }
+        .inputs{
+            color: white;
+            background: black;
+        }
+        .indicaciones{
+            color: rgb(255, 5, 5);
+        }
+    </style>
+</head>
+<body  class="Fondo">
+    <center>
+    <div class="container-fluid">
+        <main>
+          <div class="py-5 text-center">
+              <h1 class="Titulo">Estacionamiento</h1>
+            </div>
+        <div class="row g-5 ">
+        <div class="col-md-4 col-lg-4 order-md-last">
+          <h4 class="d-flex justify-content-between align-items-center mb-3 ">
+            <span class=" text-primary" >Autos</span>
+            <span class="badge bg-primary rounded-pill" id="registros"></span>
+          </h4>
+          <ul class="list-group mb-3 ">
+            <div id="muestreo">
+            </div>
+          </ul>
+        </div>
+        <div class="col-md-8 col-lg-8">
+            <h4 class="mb-3 indicaciones"> Datos</h4>
+            <div class="row g-3">
+              <div class="col-sm-2">
+                <label for="firstName" class="form-label"><b>Matricula:</b></label>
+                <input type="text"  class="form-control inputs" id="Matricula" >
+              </div>
+              <div class="col-sm-2">
+                <label for="lastName"  class="form-label"><b>Marca:</b></label>
+                <input type="text" class="form-control inputs" id="marca">
+                <br>
+                <button class="btn-borde1" id="btn-registrar">Registrar</button>
+              </div>
+        </div>
+        <div align="center" id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <p></p>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="https://i2.wp.com/lopezdoriga.com/wp-content/uploads/2019/12/estacionamiento.jpg?fit=1000%2C563&ssl=1" class="d-block w-50" width="50" lang="50">
+              </div>
+              <div class="carousel-item">
+                <img src="https://p1.pxfuel.com/preview/997/828/865/dark-ground-basement-car.jpg" class="d-block w-50" width="50" lang="50">
+              </div>
+              <div class="carousel-item">
+                <img src="https://invex.com/getmedia/f11946b2-682d-4130-9a6f-3ca3d2d86448/ESTACIONAMIENTOS?width=1500&height=1000&ext=.jpg" class="d-block w-50"  width="450" lang="50">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <hr class="my-4">
+        <h2 class="indicaciones">Salida</h2>
+            <div class="col-sm-3 offset-6">
+              <label for="lastName" class="form-label"><h5>Opciones de Horas:</h5></label>
+              <select class="form-control inputs" id="horas">
+                <option value="1">1 a 3 hrs</option>
+                <option value="2">4 a 5 hrs</option>
+                <option value="3">6 o mas hrs</option>
+              </select>
+              <p></p>
+              <button class="btn-borde1 " id="btn-operaciones">Aceptar</button>
+            </div>
+            <hr class="my-4">
+            <h2 class="indicaciones">Mas Acciones</h2>
+                <div class="col-sm-3 offset-6">
+                  <label for="lastName" class="form-label"><h5>Opciones de Acciones:</h5></label>
+                  <select class="form-control inputs" id="acciones">
+                    <option value="1">Mostrar Autos</option>
+                    <option value="2">Mostrar por matricula</option>
+                    <option value="3">Mostrar por marca</option>
+                  </select>
+                  <p></p>
+                  <button class="btn-borde1 " id="btn-Acciones">Realizar</button>
+                </div>
+    </main>
+</center>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){ // Cuando el documento este listo
+
+    // Arreglo para guardar los alumnos
+    var autos = []; 
+    // Arreglo para guardar los grupos
+    var grupos = [];
+    //Funcion para registrar los datos de los alumnos al darle click al boton
+    $("#btn-registrar").click(function(){
+    let auto = {
+    "Matricula" : $("#Matricula").val(),
+    "marca" : $("#marca").val()
+    };
+    autos.push(auto);
+        $("#muestreo").append('<li class="list-group-item d-flex justify-content-between bg-light"><div class="text-success"><h6 class="my-0">'+auto.Matricula+'</h6><small>'+auto.marca+'</small></div></li>');
+        console.log(autos);
+    });
+    //$("#btn-operaciones").click(function(){
+       /* let opc = $("#horas").val();
+  
+        switch(opc){
+          case "1":
+            horas1(alumnos);
+            let matricula = prompt("La tarifa es de $100, Ingrese el pago");
+            for(let i = 0; i < alumnos.length; i++){
+              if(alumnos[i].matricula == matricula){
+                alert("Nombre: "+alumnos[i].nombre+"\nMatricula: "+alumnos[i].matricula+"\nCalificacion: "+alumnos[i].calificacion+"\nSexo: "+alumnos[i].sexo+"\nGrupo: "+alumnos[i].grupo);
+              }
+            }
+            break;
+          case "2":
+            horas2(alumnos)
+            let matricula = prompt("La tarifa es de $200, Ingrese el pago");
+            for(let i = 0; i < alumnos.length; i++){
+              if(alumnos[i].matricula == matricula){
+                alert("Nombre: "+alumnos[i].nombre+"\nMatricula: "+alumnos[i].matricula+"\nCalificacion: "+alumnos[i].calificacion+"\nSexo: "+alumnos[i].sexo+"\nGrupo: "+alumnos[i].grupo);
+              }
+            }
+            break;
+          case "3":
+            horas3(alumnos);
+            let matricula = prompt("La tarifa es de $500, Ingrese el pago");
+            for(let i = 0; i < alumnos.length; i++){
+              if(alumnos[i].matricula == matricula){
+                alert("Nombre: "+alumnos[i].nombre+"\nMatricula: "+alumnos[i].matricula+"\nCalificacion: "+alumnos[i].calificacion+"\nSexo: "+alumnos[i].sexo+"\nGrupo: "+alumnos[i].grupo);
+              }
+            }
+            break;
+        }*/
+        $("#btn-Acciones").click(function(){
+        let opc = $("#acciones").val();
+  
+        switch(opc){
+          case "1":
+          alert("Los Autos son: \n");
+        let grupo = [];
+        for(let i = 0; i < grupo.length; i++){
+          alert("Matricula: "+grupo[i].Matricula+"\nMarca: "+grupo[i].marca);
+        }
+            break;
+          case "2":
+          let Matricula = prompt("Ingrese la matricula del Auto");
+            for(let i = 0; i < autos.length; i++){
+              if(autos[i].Matricula == Matricula){
+                alert("Matricula: "+autos[i].Matricula+"\nMarca: "+autos[i].marca);
+              }
+            }
+            /*let conjunto = [];
+            let nAlumnos = prompt("Ingrese la matricula de auto");
+            for(let i = 0; i < nAlumnos; i++){
+              let matricula = prompt("Ingrese la matricula del alumno");
+              for(let j = 0; j < alumnos.length; j++){
+                if(alumnos[j].matricula == matricula){
+                  conjunto.push(alumnos[j]);
+                }
+              }
+            }
+            horas1(conjunto);
+            horas2(conjunto);
+            horas3(conjunto);*/
+            break;
+          case "3":
+          let marca = prompt("Ingrese la marca del Auto");
+            for(let i = 0; i < autos.length; i++){
+              if(autos[i].marca == marca){
+                alert("Marca: "+autos[i].marca+"\nMatricula: "+autos[i].Matricula);
+              }
+            }
+            //mostrarGrupo(alumnos);
+            break;
+        }
+        //});
+        });
+    });
+</script>
+</html>
